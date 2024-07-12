@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use setasign\Fpdi\Fpdi;
+// use setasign\Fpdi\Fpdi;
 use App\Mail\AgentPDFMail;
 use App\Mail\PdfMergedMail;
 use Illuminate\Http\Request;
@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use setasign\Fpdi\PdfParser\StreamReader;
 use Intervention\Image\Laravel\Facades\Image;
+use setasign\Fpdi\Tcpdf\Fpdi;
 
 class PdfMergeController extends Controller
 {
@@ -34,6 +35,7 @@ class PdfMergeController extends Controller
         $usi_staff_signature_attach_url = storage_path('app/' . $usi_staff_signature_attach_path);
 
         $pdf = new Fpdi();
+        
         // dd($signature_attach_url);
         $data = [
             "course" => $request->course,
@@ -182,20 +184,11 @@ class PdfMergeController extends Controller
         array_push($fileArray, $request->file('query_files'));
         $fileToDeleteArray = [];
         foreach ($fileArray as $file) {
-            // dd($file);
-            // $file_attach = $file;
-            // $fileName = $file->getClientOriginalName();
-            // $fileExtension = $file->getClientOriginalExtension();
-            // $filePath = $file->move(public_path('assets/files'), $fileName);
-            // $fileFullPath = $filePath->getPathname();
             
             $fileExtension = $file->getClientOriginalExtension();
             $file_attach_path = $file->store('public/images');
             $file_attach_url = storage_path('app/' . $file_attach_path);
             array_push($fileToDeleteArray,$file_attach_path);
-            // if (!file_exists($fileFullPath)) {
-            //     return response()->json(['error' => 'File not found: ' . $fileFullPath], 404);
-            // }
             // set the source file and get the number of pages in the document
             try {
                 // Initialize FPDI and add pages from the temporary PDF
@@ -218,7 +211,8 @@ class PdfMergeController extends Controller
                         $constraint->upsize(); // Prevent upsizing
                     });
                     $pdf->AddPage();
-                    $pdf->Image($file_attach_url, 0, 0, $pdf->GetPageWidth(), $pdf->GetPageHeight());
+                    // $pdf->Image($file_attach_url, 0, 0, $pdf->GetPageWidth(), $pdf->GetPageHeight());
+                    $pdf->Image($file_attach_url, 80, 100, 50);
                 } else {
                     return response()->json(['error' => 'Unsupported file type: ' . $fileExtension], 400);
                 }
@@ -236,7 +230,7 @@ class PdfMergeController extends Controller
         // }
         $pdfContent = $pdf->Output('', 'S');
         //return the generated PDF
-        // unlink(storage_path('app/' . $imagePath));
+        unlink($tempPdfPath);
         // unlink(storage_path('app/' . $signature_attach_path));
         // unlink(storage_path('app/' . $usi_staff_signature_attach_path));
 
