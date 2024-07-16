@@ -244,10 +244,11 @@ class PdfMergeController extends Controller
 
     public function agent_form(Request $request)
     {
+        // dd($request->copy_of_business_registration);
         $signature_attach = $request->file('signature');
         $signature_attach_path = $signature_attach->store('public/agent-signature');
         $signature_attach_url = storage_path('app/' . $signature_attach_path);
-        // dd($request->all());
+        
         $pdf = new Fpdi();
 
         $data = [
