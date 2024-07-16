@@ -19,7 +19,7 @@ class PdfMergeController extends Controller
 {
     public function index(Request $request)
     {
-        // dd($request->file('student_signature'));
+        // dd($request->all());
         // agent stamp image
         $agent_stamp_image = $request->file('agent_stamp_file');
         $imagePath = $agent_stamp_image->store('public/images');
@@ -352,7 +352,7 @@ class PdfMergeController extends Controller
                     $constraint->upsize(); // Prevent upsizing
                 });
                 $pdf->AddPage();
-                $pdf->Image($fileFullPath, 0, 0, $pdf->GetPageWidth(), $pdf->GetPageHeight());
+                $pdf->Image($fileFullPath, 80, 100, 50);
             } else {
                 return response()->json(['error' => 'Unsupported file type: ' . $fileExtension], 400);
             }
@@ -365,6 +365,7 @@ class PdfMergeController extends Controller
         $pdfContent = $pdf->Output('', 'S');
         //return the generated PDF
         unlink(storage_path('app/' . $signature_attach_path));
+        unlink($filePath);
 
         try {
             Mail::to('megatanjib@gmail.com')->send(new AgentPDFMail($pdfContent));

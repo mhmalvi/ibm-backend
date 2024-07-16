@@ -1387,8 +1387,8 @@
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2" bgcolor="#BEBEBE">
                     <p class="s2" style="padding-top: 3pt;text-indent: 0pt;text-align: left;">Title</p>
                 </td>
-                <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
-                    <div style="display:flex;">
+                <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-width:1pt; ">
+                    <div style="display:flex; margin-left:5px;">
                         <p>
                             @if ($title == 'mister')
                             <input type="checkbox" checked>
@@ -1428,7 +1428,7 @@
                             Ms.</p>
                     </div>
                 </td>
-                <td style="border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <td style="border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt; border-right-style:solid;border-right-width:1pt">
                     <div style="display:flex;">
                         <p>
                             @if ($title == 'miss')
@@ -1451,21 +1451,25 @@
                         </li>
                     </ul>
                 </td> --}}
-            </tr>
+            </tr> 
             <tr style="height:20pt">
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2" bgcolor="#BEBEBE">
                     <p class="s2" style="padding-top: 3pt;text-indent: 0pt;text-align: left;">Gender</p>
                 </td>
-                <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+                <td style="border-top-style:solid;border-top-width:1pt; border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;">
                     {{-- <ul id="l8">
                         <li data-list-text="☐"> --}}
-                    <p class="s2" style="padding-top: 3pt;padding-left: 47pt;text-indent: -16pt;text-align: left;">
-                        @if ($gender == 'male')
-                        <input type="checkbox" checked>
-                        @else
-                        <input type="checkbox">
-                        @endif
-                        Male
+                    <p class="s2" style="padding-top: 3pt;padding-left: 24pt;text-indent: -16pt;text-align: left;">
+                                @if ($gender == 'male')
+                                <input type="checkbox" checked>
+                                @else
+                                <input type="checkbox">
+                                @endif
+                            Male
+                            
+                        
+
+                        
                     </p>
                     {{-- </li>
                     </ul> --}}
@@ -1481,8 +1485,6 @@
                     </p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
-                    <ul id="l10">
-                        <li data-list-text="☐">
                             <p class="s2" style="padding-top: 3pt;padding-left: 33pt;text-indent: -28pt;text-align: left;">
                                 @if ($gender == 'gender_other')
                                 <input type="checkbox" checked>
@@ -1491,8 +1493,6 @@
                                 @endif
                                 Other
                             </p>
-                        </li>
-                    </ul>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
                     <p style="text-indent: 0pt;text-align: left;"><br /></p>
@@ -1503,15 +1503,17 @@
                     <p class="s2" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">Family Name<span class="s7">*</span></p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="4">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $family_name }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $family_name }}</p>
                 </td>
             </tr>
             <tr style="height:18pt">
                 <td style="width:80pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2" bgcolor="#BEBEBE">
-                    <p class="s2" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">Given Name<span class="s7">*</span></p>
+                    <p class="s2" style="margin-left:5px;padding-top: 2pt;text-indent: 0pt;text-align: left;">Given Name<span class="s7">*</span></p>
+
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="4">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $given_name }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $given_name }}</p>
+
                 </td>
             </tr>
             <tr style="height:26pt">
@@ -1536,7 +1538,8 @@
                         Birth<span class="s7">*</span></p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="4">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $place_birth }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $place_birth }}</p>
+
                 </td>
 
 
@@ -1546,7 +1549,8 @@
                     <p class="s2" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">Date of Birth</p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="1">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $date_of_birth }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left; padding:3px">{{ $date_of_birth }}</p>
+
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#BEBEBE" colspan="1">
 
@@ -1554,7 +1558,8 @@
                 </td>
 
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $nationality }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $nationality }}</p>
+
                 </td>
 
             </tr>
@@ -1563,7 +1568,8 @@
                     <p class="s2" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">Passport No<span class="s7">*</span></p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="1">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $passport }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $passport }}</p>
+
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#BEBEBE" colspan="1">
 
@@ -1571,7 +1577,8 @@
                 </td>
 
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $passport_expiry }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $passport_expiry }}</p>
+
                 </td>
 
             </tr>
@@ -1581,7 +1588,8 @@
                     <p class="s2" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">Visa Type<span class="s7">*</span></p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="1">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $visa_type }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $visa_type }}</p>
+
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#BEBEBE" colspan="1">
 
@@ -1589,7 +1597,8 @@
                 </td>
 
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $visa_subclass }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $visa_subclass }}</p>
+
                 </td>
 
             </tr>
@@ -1598,7 +1607,8 @@
                     <p class="s2" style="padding-top: 2pt;text-indent: 0pt;text-align: left;">Visa Number<span class="s7">*</span></p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="1">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $visa_number }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $visa_number }}</p>
+
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#BEBEBE" colspan="1">
 
@@ -1606,7 +1616,8 @@
                 </td>
 
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $visa_expiry }}</p>
+                    <p style="margin-left:5px;text-indent: 0pt;text-align: left;">{{ $visa_expiry }}</p>
+
                 </td>
 
             </tr>
@@ -1642,9 +1653,9 @@
                         No<br>
 
                         <div style="display:flex;">
-                            <p> If Yes, OSHC
-                                Provider:</p>
-                            <u>{{ $oshc_cover_provider ? $oshc_cover_provider : '' }}</u>
+                            If Yes, OSHC
+                                Provider:    {{ $oshc_cover_provider ? $oshc_cover_provider : '' }}
+
 
                         </div>
 
@@ -1667,12 +1678,14 @@
                         <div style="display:flex;">
                             Name(s) of the
                             family member(s)
-                            <u>{{ $oshc_cover_family_member_name }}</u>
+                            <u style="margin-left:5px;">{{ $oshc_cover_family_member_name }}</u>
+
 
                         </div>
                     </p>
                     <p class="s2" style="padding-top: 11pt;text-indent: 0pt;text-align: left;">Date of Birth:
-                        <u style="margin-left:5px;">{{ $oshc_cover_date_birth }}</u> Gender: <span style="margin-top:10px;" class="">
+                        <u style="margin-left:5px;">{{ $oshc_cover_date_birth }}</u><br><br> Gender: <span style="margin-top:10px;" class="">
+
                             @if ($overseas_gender == 'male')
                             <input type="checkbox" checked name="" id="">
                             @else
@@ -1701,7 +1714,7 @@
             <tr style="height:15pt">
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="4">
                     <p class="s2" style="text-indent: 0pt;text-align: left;">Are you currently studying in
-                        Australia? <span class="s3">
+                        Australia? <span class="s3" style="padding:5px;">
                             @if ($oshc_cover_study_australia == 'oshc-cover-study-australia-yes')
                             <input type="checkbox" checked>
                             @else
@@ -1723,7 +1736,8 @@
                         institute</p>
                 </td>
                 <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="3">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $oshc_cover_name_institute }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $oshc_cover_name_institute }}</p>
+
                 </td>
             </tr>
             <tr style="height:25pt">
@@ -1769,7 +1783,7 @@
                             <input type="checkbox">
                             @endif
                         </span>
-                        No
+                        No <br>
                         If YES, please
                         specify your USI
                         <u>{{ $usi_specify }}</u>
@@ -1777,12 +1791,15 @@
                     <p class="s2" style="padding-top: 11pt;text-indent: 0pt;text-align: left;">USI verified by
                         Institute of
                         Business and Management (Victoria):</p>
-                    <p class="s2" style="text-indent: 0pt;text-align: left;">Staff Name<u>
+                    <p class="s2" style="text-indent: 0pt;text-align: left;">Staff Name<u style="margin-left:5px;">
+
                             {{ $usi_staff_name }}
                         </u> Signature
-                        <u><img style="width:30px;" src="{{ $usi_staff_signature_attach_url }}" alt="">
+                        <u><img style="width:30px;margin-left:5px;" src="{{ $usi_staff_signature_attach_url }}" alt="">
 
-                        </u> Date: {{ $usi_staff_date }}
+
+                        </u style="margin-left:10px;"> Date: {{ $usi_staff_date }}
+
                     </p>
                 </td>
             </tr>
@@ -1848,7 +1865,8 @@
                         Name</p>
                 </td>
                 <td style="width:369pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="3">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_building }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_building }}</p>
+
                 </td>
             </tr>
             <tr style="height:22pt">
@@ -1857,13 +1875,15 @@
                     </p>
                 </td>
                 <td style="width:93pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_flat }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_flat }}</p>
+
                 </td>
                 <td style="width:57pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9D9D9">
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Street No</p>
                 </td>
                 <td style="width:219pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_street_no }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_street_no }}</p>
+
                 </td>
             </tr>
             <tr style="height:21pt">
@@ -1871,13 +1891,15 @@
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Street Name</p>
                 </td>
                 <td style="width:93pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_street_name }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_street_name }}</p>
+
                 </td>
                 <td style="width:57pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9D9D9">
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Suburb</p>
                 </td>
                 <td style="width:219pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_suburb }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_suburb }}</p>
+
                 </td>
             </tr>
             <tr style="height:22pt">
@@ -1886,13 +1908,15 @@
                     </p>
                 </td>
                 <td style="width:93pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_state }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_state }}</p>
+
                 </td>
                 <td style="width:57pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9D9D9">
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Postcode</p>
                 </td>
                 <td style="width:219pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_postcode }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_postcode }}</p>
+
                 </td>
             </tr>
             <tr style="height:21pt">
@@ -1900,13 +1924,15 @@
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Mobile</p>
                 </td>
                 <td style="width:93pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_mobile }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_mobile }}</p>
+
                 </td>
                 <td style="width:57pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9D9D9">
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Email</p>
                 </td>
                 <td style="width:219pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $contact_australia_email }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $contact_australia_email }}</p>
+
                 </td>
             </tr>
             <tr style="height:23pt">
@@ -1920,7 +1946,8 @@
                         Name</p>
                 </td>
                 <td style="width:369pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="3">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_building }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_building }}</p>
+
                 </td>
             </tr>
             <tr style="height:21pt">
@@ -1929,13 +1956,15 @@
                     </p>
                 </td>
                 <td style="width:93pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_flat }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_flat }}</p>
+
                 </td>
                 <td style="width:57pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9D9D9">
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Street No</p>
                 </td>
                 <td style="width:219pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_street_no }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_street_no }}</p>
+
                 </td>
             </tr>
             <tr style="height:22pt">
@@ -1943,13 +1972,15 @@
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Street Name</p>
                 </td>
                 <td style="width:93pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_street_name }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_street_name }}</p>
+
                 </td>
                 <td style="width:57pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9D9D9">
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Suburb</p>
                 </td>
                 <td style="width:219pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_suburb }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_suburb }}</p>
+
                 </td>
             </tr>
             <tr style="height:21pt">
@@ -1958,13 +1989,15 @@
                     </p>
                 </td>
                 <td style="width:93pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_state }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_state }}</p>
+
                 </td>
                 <td style="width:57pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9D9D9">
                     <p class="s2" style="padding-top: 4pt;text-indent: 0pt;text-align: left;">Postcode</p>
                 </td>
                 <td style="width:219pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_postcode }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_postcode }}</p>
+
                 </td>
             </tr>
             <tr style="height:25pt">
@@ -1972,7 +2005,8 @@
                     <p class="s2" style="text-indent: 0pt;text-align: left;">PO Box or roadside delivery box:</p>
                 </td>
                 <td style="width:369pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="3">
-                    <p style="text-indent: 0pt;text-align: left;">{{ $postal_address_delivery_box }}</p>
+                    <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $postal_address_delivery_box }}</p>
+
                 </td>
             </tr>
             <tr style="height:23pt">
@@ -1981,8 +2015,6 @@
                         Method</p>
                 </td>
                 <td style="width:369pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="3">
-                    <ul id="l11">
-                        <li data-list-text="☐">
                             <p class="s2" style="padding-top: 4pt;padding-left: 32pt;text-indent: -19pt;text-align: left;">
                                 <span class="s3">
                                     @if ($preferred_contact_method == 'email')
@@ -1998,8 +2030,6 @@
                                     @endif
                                 </span>Phone
                             </p>
-                        </li>
-                    </ul>
                 </td>
             </tr>
             <tr style="height:26pt">
@@ -2083,14 +2113,16 @@
                 <p class="s2" style="padding-top: 3pt;text-indent: 0pt;text-align: left;">Score Achieved</p>
             </td>
             <td style="width:105pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                <p style="text-indent: 0pt;text-align: left;">{{ $english_score_achieved }}</p>
+                <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $english_score_achieved }}</p>
+
             </td>
             <td style="width:44pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#BEBEBE">
                 <p class="s2" style="padding-top: 3pt;padding-left: 5pt;text-indent: 0pt;text-align: left;">Date
                 </p>
             </td>
             <td style="width:234pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                <p style="text-indent: 0pt;text-align: left;">{{ $english_score_date }}</p>
+                <p style="text-indent: 0pt;text-align: left;margin-left:5px;">{{ $english_score_date }}</p>
+
             </td>
         </tr>
         <tr style="height:38pt">
@@ -2102,10 +2134,12 @@
                 @else
                 <input type="checkbox" />
                 @endif
-                <p class="s2" style="padding-right: 16pt;text-indent: 6pt;text-align: left;">Not Required.
+                {{-- <p class="s2" style="padding-right: 16pt;text-indent: 6pt;text-align: left;"> --}}
+                Not Required.
                     I am
                     from Level I country. (You will be required to undertake Placement Assessment if you are not
-                    from the list of exempted countries. Refer Entry requirement policy)</p>
+                    from the list of exempted countries. Refer Entry requirement policy)
+                    {{-- </p> --}}
                 </li>
                 </ul>
             </td>
@@ -2234,8 +2268,6 @@
             <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:2pt;border-right-style:solid;border-right-width:1pt" colspan="4">
                 <p class="s2" style="padding-top: 1pt;text-indent: 0pt;text-align: left;">In case of overseas
                     qualification, has the qualification been skill assessed in Australia?</p>
-                <ul id="l22">
-                    <li data-list-text="☐">
                         <p class="s2" style="padding-left: 22pt;text-indent: -19pt;text-align: left;"><span class="s3">
                                 @if ($assessedOrNot == 'yes')
                                 <input type="checkbox" checked />
@@ -2249,8 +2281,6 @@
                                 <input type="checkbox" />
                                 @endif
                             </span>No</p>
-                    </li>
-                </ul>
             </td>
         </tr>
         <tr style="height:23pt">
@@ -2433,9 +2463,9 @@
             </td>
             <td style="width:278pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2" rowspan="2">
                 <div>
-                    <p class="s2" style="padding-left: 1pt;padding-right: 233pt;text-indent: 0pt;text-align: left;">
-                        <b>Others Specify:</b> </p>
-                    <p>{{ $other_reason_to_study?$other_reason_to_study:"" }}</p>
+                    {{-- <p class="s2" style="padding-left: 1pt;padding-right: 233pt;text-indent: 0pt;text-align: left;"> --}}
+                        <b>Others Specify:</b> 
+                    {{ $other_reason_to_study?$other_reason_to_study:"" }}
 
                 </div>
 
@@ -2908,13 +2938,14 @@
                 <p class="s2" style="text-indent: 0pt;line-height: 12pt;text-align: left;">Agency Name</p>
             </td>
             <td style="border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                <p style="text-indent: 0pt;text-align: left;">{{ $education_agency_name }}</p>
+                <p style="text-indent: 0pt;text-align: left;margin-left;5px;">{{ $education_agency_name }}</p>
+
             </td>
             <td style="width:95pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
                 <p class="s2" style="text-indent: 0pt;line-height: 12pt;text-align: left;">Agent Name</p>
             </td>
             <td style="width:202pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
-                <p style="text-indent: 0pt;text-align: left;">{{ $education_agent_name }}</p>
+                <p style="text-indent: 0pt;text-align: left;margin-left;5px;">{{ $education_agent_name }}</p>
             </td>
         </tr>
         <tr style="height:24pt">
@@ -2922,7 +2953,8 @@
                 <p class="s2" style="text-indent: 0pt;text-align: left;">Email Id:</p>
             </td>
             <td style="width:445pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="3">
-                <p style="text-indent: 0pt;text-align: left;">{{ $education_agent_mail }}</p>
+                <p style="text-indent: 0pt;text-align: left;margin-left;5px;">{{ $education_agent_mail }}</p>
+
             </td>
         </tr>
         <tr style="height:248pt">
