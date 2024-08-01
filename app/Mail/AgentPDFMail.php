@@ -27,7 +27,7 @@ class AgentPDFMail extends Mailable
      */
     public function build()
     {
-        return $this->view('agentMail')
+        return $this->view('apply')
             ->attachData($this->pdfContent, 'agent.pdf', [
                 'mime' => 'application/pdf',
             ]);
