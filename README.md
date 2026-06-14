@@ -1,3 +1,6 @@
+<!-- repo-card -->
+![ibm-backend](docs/assets/social-card.png)
+
 # IBM Backend
 
 A Laravel-based backend service for PDF processing and email delivery. This application handles PDF merging, document generation, and automated email dispatch for agent and applicant communications.
